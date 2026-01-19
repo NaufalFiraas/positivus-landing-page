@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --bg-primary: #B9FF66;
+  --bg-secondary: #191A23;
+  --bg-tertiary: #F3F3F3;
+}
+
+/*# sourceMappingURL=main.css.map */
