@@ -51,7 +51,11 @@
         }
 
         button {
-            @include generalButton(none, var(--bg-secondary))
+            @include mixins.generalButton(none, var(--bg-secondary));
+        }
+
+        #hamburgerMenu {
+            display: none !important;
         }
     }
 }
