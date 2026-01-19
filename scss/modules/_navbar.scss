@@ -11,7 +11,13 @@
     left: 0;
     right: 0;
     z-index: 999;
+    transition: all 0.3s ease;
     // background-color: var(--bg-primary);
+
+    &.scrolled,
+    &.active {
+        box-shadow: 1px 1px 5px #00000070;
+    }
 
     a#home {
         display: flex;
@@ -36,7 +42,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 2rem;
+        gap: 1.8rem;
 
         a {
             color: var(--bg-secondary);
@@ -48,14 +54,19 @@
                 text-shadow: 1px 1px 2px #000000;
             }
 
+            &.active {
+                color: var(--bg-primary);
+                text-shadow: 1px 1px 2px #000000;
+            }
+
         }
 
         button {
             @include mixins.generalButton(none, var(--bg-secondary));
         }
+    }
 
-        #hamburgerMenu {
-            display: none !important;
-        }
+    #hamburgerMenu {
+        display: none;
     }
 }
