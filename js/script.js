@@ -11,7 +11,7 @@ hamburgerMenu.addEventListener("click", (e) => {
 
 // add shadow to navbar when page scrolled
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 100) {
         navbar.classList.add("scrolled")
     } else {
         navbar.classList.remove("scrolled")
