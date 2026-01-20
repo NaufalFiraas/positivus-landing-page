@@ -6,6 +6,8 @@
 @use 'modules/hero-responsive';
 @use 'modules/companyList';
 @use 'modules/companyList-responsive';
+@use 'modules/services';
+@use 'modules/services-responsive';
 
 body {
     height: 2000px;

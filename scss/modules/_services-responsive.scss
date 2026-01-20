@@ -1,0 +1,35 @@
+@use '../mixins';
+@use '../variables';
+
+@media (max-width: 1131px) {
+    .services {
+        .content {
+            flex-direction: column;
+            gap: 2rem;
+            
+            .service {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .services {
+        .content {
+            .service {
+                .left {
+                    .footer {
+                        img {
+                            width: 15%;
+                        }
+                    }
+                }
+                img {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
