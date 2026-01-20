@@ -17,7 +17,7 @@ body {
 }
 
 .navbar {
-  padding: 1.5rem;
+  padding: 1.5rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,6 +30,7 @@ body {
 }
 .navbar.scrolled, .navbar.active {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4392156863);
+  background-color: #fff;
 }
 .navbar a#home {
   display: flex;
@@ -78,6 +79,7 @@ body {
 .navbar .menus button:hover {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5647058824);
   background-color: var(--bg-primary);
+  color: var(--bg-secondadry);
 }
 .navbar .menus button:active {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5647058824);
@@ -118,6 +120,56 @@ body {
     font-size: 55%;
   }
 }
+.hero {
+  min-height: 100vh;
+  padding: 5rem 5% 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero .hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.hero .hero-content h2 {
+  font-size: 3.5rem;
+  line-height: 1.3;
+}
+.hero .hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.hero .hero-content button {
+  background: var(--bg-secondary);
+  padding: 1rem 1.3rem;
+  border: 1px solid #000000;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.hero .hero-content button:hover {
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5647058824);
+  background-color: var(--bg-primary);
+  color: var(--bg-secondadry);
+}
+.hero .hero-content button:active {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5647058824);
+}
+.hero .hero-image {
+  flex: 1;
+}
+.hero .hero-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 body {
   height: 2000px;
 }/*# sourceMappingURL=main.css.map */
