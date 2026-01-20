@@ -258,6 +258,7 @@ body {
   justify-content: flex-start;
   gap: 1rem;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 .services .content #service1,
 .services .content #service4 {
@@ -302,6 +303,24 @@ body {
   color: #fff;
 }
 
+@media (max-width: 1131px) {
+  .services .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .services .content .service {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .services .content .service .left .footer img {
+    width: 15%;
+  }
+  .services .content .service img {
+    width: 50%;
+  }
+}
 body {
   height: 2000px;
 }/*# sourceMappingURL=main.css.map */
