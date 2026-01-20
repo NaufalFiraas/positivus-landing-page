@@ -1,0 +1,19 @@
+@mixin generalButton($backcol, $color) {
+    background: $backcol;
+    padding: 1rem 1.3rem;
+    border: 1px solid #000000;
+    font-size: 1rem;
+    color: $color;
+    border-radius: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 2px 2px 3px #00000090;
+        background-color: var(--bg-primary);
+    }
+
+    &:active {
+        box-shadow: 1px 1px 2px #00000090;
+    }
+}
