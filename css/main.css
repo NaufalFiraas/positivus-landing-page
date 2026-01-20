@@ -188,6 +188,24 @@ body {
     max-width: 50%;
   }
 }
+.companyList {
+  display: flex;
+  padding: 0 5%;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .companyList img {
+    width: 8rem;
+    display: inline-block;
+  }
+}
+@media (max-width: 700px) {
+  .companyList {
+    gap: 3rem;
+    overflow: scroll;
+  }
+}
 body {
   height: 2000px;
 }/*# sourceMappingURL=main.css.map */
