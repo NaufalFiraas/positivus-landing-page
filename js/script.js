@@ -29,3 +29,10 @@ for (let i = 0; i < menu.length; i++) {
         this.classList.add("active")
     })
 }
+
+// close side navbar when click outside it
+document.addEventListener("click", (e) => {
+    if (!hamburgerMenu.contains(e.target) && !navbar.contains(e.target)) {
+        menus.classList.remove("active")
+    }
+})
