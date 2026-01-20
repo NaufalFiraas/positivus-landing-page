@@ -1,0 +1,15 @@
+@media (max-width: 900px) {
+    .companyList {
+        img {
+            width: 8rem;
+            display: inline-block;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .companyList {
+        gap: 3rem;
+        overflow: scroll;
+    }
+}

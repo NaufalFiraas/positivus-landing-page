@@ -4,6 +4,8 @@
 @use 'modules/navbar-responsive';
 @use 'modules/hero';
 @use 'modules/hero-responsive';
+@use 'modules/companyList';
+@use 'modules/companyList-responsive';
 
 body {
     height: 2000px;
