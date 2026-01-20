@@ -1,0 +1,22 @@
+@use "../mixins";
+@use '../variables';
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: auto;
+
+        .hero-content {
+            order: 2;
+            align-items: normal;
+        }
+
+        .hero-image {
+            order: 1;
+            max-width: 50%;
+        }
+
+    }
+}
