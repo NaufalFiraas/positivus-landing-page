@@ -2,7 +2,7 @@
 @use '../mixins';
 
 .navbar {
-    padding: 1.5rem;
+    padding: 1.5rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +17,7 @@
     &.scrolled,
     &.active {
         box-shadow: 1px 1px 5px #00000070;
+        background-color: #fff;
     }
 
     a#home {

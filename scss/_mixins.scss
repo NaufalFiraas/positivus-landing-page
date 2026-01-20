@@ -10,7 +10,8 @@
 
     &:hover {
         box-shadow: 2px 2px 3px #00000090;
-        background-color: var(--bg-primary);
+        background-color: var(--bg-primary);    
+        color: var(--bg-secondadry);
     }
 
     &:active {

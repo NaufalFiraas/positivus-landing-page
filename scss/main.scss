@@ -2,6 +2,8 @@
 
 @use 'modules/navbar';
 @use 'modules/navbar-responsive';
+@use 'modules/hero';
+@use 'modules/hero-responsive';
 
 body {
     height: 2000px;
