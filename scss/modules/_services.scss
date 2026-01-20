@@ -1,0 +1,91 @@
+@use '../mixins';
+@use '../variables';
+
+.services {
+    padding: 5rem 5% 1.5rem;
+
+    .header {
+        display: flex;
+        justify-content: flex-start;
+        gap: 3rem;
+        margin-bottom: 2rem;
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            background-color: var(--bg-primary);
+            padding: 0 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        .service {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            box-sizing: border-box;
+            padding: 2rem;
+            border-radius: 2rem;
+            min-height: 280px;
+            flex: 0 0 calc(50% - 0.75rem);
+            box-shadow: 0 7px 5px #000000;
+            gap: 2rem;
+
+            .left {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                h2 {
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                }
+
+                .footer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 1rem;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        #service1,
+        #service4 {
+            @include mixins.serviceCard(var(--bg-tertiary), var(--bg-primary));
+        }
+
+        #service2,
+        #service5 {
+            @include mixins.serviceCard(var(--bg-primary), #fff);
+        }
+
+        #service3 {
+            @include mixins.serviceCard(var(--bg-secondary), #fff);
+
+            .footer {
+                color: #fff;
+            }
+
+        }
+
+        #service6 {
+            @include mixins.serviceCard(var(--bg-secondary), var(--bg-primary));
+
+            .footer {
+                color: #fff;
+            }
+        }
+    }
+}
