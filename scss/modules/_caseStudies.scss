@@ -2,7 +2,7 @@
 @use '../variables';
 
 .case {
-    margin: 5rem 5% 1.5rem;
+    padding: 5rem 5% 1.5rem;
 
     .header {
         display: flex;
@@ -55,6 +55,10 @@
                     font-size: 1.2rem;
                     color: var(--bg-primary);
                     line-height: 1.7rem;
+                }
+
+                img {
+                    width: 1.5rem;
                 }
             }
         }

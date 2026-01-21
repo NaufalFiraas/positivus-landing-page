@@ -11,7 +11,4 @@
 @use 'modules/thingsHappen';
 @use 'modules/thingsHappen-responsive';
 @use 'modules/caseStudies';
-
-body {
-    height: 2000px;
-}
+@use 'modules/caseStudies-responsive';
