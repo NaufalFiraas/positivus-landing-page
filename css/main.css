@@ -207,7 +207,7 @@ body {
   }
 }
 .services {
-  padding: 5rem 5% 1.5rem;
+  padding: 8rem 5% 1.5rem;
 }
 .services .header {
   display: flex;
@@ -319,6 +319,66 @@ body {
   }
   .services .content .service img {
     width: 50%;
+  }
+}
+.things {
+  padding: 1rem 5rem;
+  box-sizing: border-box;
+  margin: 5rem 5% 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 3rem;
+}
+.things .content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.things .content h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.things .content p {
+  font-size: 1.1rem;
+}
+.things .content button {
+  background: var(--bg-secondary);
+  padding: 1rem 1.3rem;
+  border: 1px solid #000000;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.things .content button:hover {
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5647058824);
+  background-color: var(--bg-primary);
+  color: var(--bg-secondadry);
+}
+.things .content button:active {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5647058824);
+}
+.things img {
+  flex: 1;
+  display: inline-block;
+  max-width: 50%;
+}
+
+@media (max-width: 1131px) {
+  .things .content {
+    text-align: center;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .things img {
+    display: none;
   }
 }
 body {
