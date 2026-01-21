@@ -3,6 +3,8 @@ const hamburgerMenu = document.getElementById("hamburgerMenu")
 const menus = document.querySelector(".menus")
 const navbar = document.querySelector(".navbar")
 const menu = document.querySelectorAll(".menus a")
+const btnExpand = document.querySelectorAll(".process .title p")
+const process = document.querySelectorAll(".process")
 
 hamburgerMenu.addEventListener("click", (e) => {
     menus.classList.toggle("active")
@@ -36,3 +38,22 @@ document.addEventListener("click", (e) => {
         menus.classList.remove("active")
     }
 })
+
+// expand working process
+for (let i = 0; i < btnExpand.length; i++) {
+    btnExpand[i].addEventListener("click", (e) => {
+        if (process[i].classList.contains("active")) {
+            process[i].classList.remove("active")
+            btnExpand[i].textContent = "+"
+        } else {
+            for (let j = 0; j < btnExpand.length; j++) {
+                if (process[j].classList.contains("active")) {
+                    process[j].classList.remove("active")
+                    btnExpand[j].textContent = "+"
+                }
+            }
+            process[i].classList.toggle("active")
+            btnExpand[i].textContent = "-"
+        }
+    })
+}
