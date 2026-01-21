@@ -216,7 +216,7 @@ body {
   margin-bottom: 2rem;
 }
 .services .header h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 500;
   background-color: var(--bg-primary);
   padding: 0 0.5rem;
@@ -381,6 +381,68 @@ body {
     display: none;
   }
 }
+.case {
+  margin: 5rem 5% 1.5rem;
+}
+.case .header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 3rem;
+}
+.case .header h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  background-color: var(--bg-primary);
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+.case .header p {
+  font-size: 1.1rem;
+  width: 50%;
+}
+.case .content {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  border-radius: 3rem;
+  padding: 5rem 0;
+  box-sizing: border-box;
+}
+.case .content .case1,
+.case .content .case2,
+.case .content .case3 {
+  padding: 0 4rem;
+  box-sizing: border-box;
+  color: #fff;
+}
+.case .content .case1 p,
+.case .content .case2 p,
+.case .content .case3 p {
+  font-size: 1.1rem;
+}
+.case .content .case1 .footer,
+.case .content .case2 .footer,
+.case .content .case3 .footer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.case .content .case1 .footer p,
+.case .content .case2 .footer p,
+.case .content .case3 .footer p {
+  font-size: 1.2rem;
+  color: var(--bg-primary);
+  line-height: 1.7rem;
+}
+.case .content .case1,
+.case .content .case2 {
+  border-right: 2px solid var(--bg-tertiary);
+}
+
 body {
   height: 2000px;
 }/*# sourceMappingURL=main.css.map */
