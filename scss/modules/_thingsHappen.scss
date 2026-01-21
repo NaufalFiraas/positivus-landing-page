@@ -1,0 +1,42 @@
+@use '../mixins';
+@use '../variables';
+
+.things {
+    padding: 1rem 5rem;
+    box-sizing: border-box;
+    margin: 5rem 5% 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10rem;
+    background-color: var(--bg-tertiary);
+    border-radius: 3rem;
+
+    .content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1.5rem;
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        button {
+            @include mixins.generalButton(var(--bg-secondary), #fff);
+        }
+    }
+
+    img {
+        flex: 1;
+        display: inline-block;
+        max-width: 50%;
+    }
+}
