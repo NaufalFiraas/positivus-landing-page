@@ -1,4 +1,5 @@
 @use '../variables';
+@use '../mixins';
 
 .team {
     padding: 5rem 5% 1.5rem;
@@ -53,6 +54,16 @@
                     right: 0;
                 }
             }
+        }
+    }
+
+    .team-footer {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            @include mixins.generalButton(var(--bg-secondary), #fff);
+
         }
     }
 }

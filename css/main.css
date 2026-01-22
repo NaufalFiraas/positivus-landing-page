@@ -599,6 +599,28 @@ body {
   top: 0;
   right: 0;
 }
+.team .team-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+.team .team-footer button {
+  background: var(--bg-secondary);
+  padding: 1rem 1.3rem;
+  border: 1px solid #000000;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.team .team-footer button:hover {
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5647058824);
+  background-color: var(--bg-primary);
+  color: var(--bg-secondadry);
+}
+.team .team-footer button:active {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5647058824);
+}
 
 @media (max-width: 900px) {
   .team .header {
@@ -611,5 +633,8 @@ body {
 @media (max-width: 580px) {
   .team .content {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .team .team-footer button {
+    width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */
