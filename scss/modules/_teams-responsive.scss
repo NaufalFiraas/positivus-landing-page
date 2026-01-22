@@ -15,5 +15,11 @@
         .content {
             grid-template-columns: repeat(1, 1fr);
         }
+
+        .team-footer {
+            button {
+                width: 100%;
+            }
+        }
     }
 }
