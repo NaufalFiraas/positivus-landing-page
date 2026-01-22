@@ -492,6 +492,7 @@ body {
   background-color: var(--bg-tertiary);
   box-shadow: 0 5px 5px #000000;
   border: 1px solid #000000;
+  transition: all 0.3s ease;
 }
 .working .content .process:nth-last-child {
   margin-bottom: 0;
@@ -523,7 +524,9 @@ body {
   cursor: pointer;
 }
 .working .content .process #process-text {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 .working .content .process.active {
   background-color: var(--bg-primary);
@@ -541,7 +544,72 @@ body {
   cursor: pointer;
 }
 .working .content .process.active #process-text {
-  display: inline-block;
+  max-height: 300px;
+  opacity: 1;
   padding-top: 2rem;
   font-size: 1.1rem;
+}
+
+.team {
+  padding: 5rem 5% 1.5rem;
+}
+.team .header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+  width: 50%;
+}
+.team .header h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  background-color: var(--bg-primary);
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+.team .header p {
+  font-size: 1.2rem;
+}
+.team .content {
+  padding: 4rem 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.team .content .person {
+  border: 1px solid #000000;
+  box-shadow: 0 2px 3px #000000;
+  padding: 2rem;
+  border-radius: 3rem;
+  box-sizing: border-box;
+}
+.team .content .person .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.team .content .person .title #linkedin {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 900px) {
+  .team .header {
+    width: 100%;
+  }
+  .team .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 580px) {
+  .team .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=main.css.map */
