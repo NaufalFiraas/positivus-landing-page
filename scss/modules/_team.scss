@@ -1,0 +1,58 @@
+@use '../variables';
+
+.team {
+    padding: 5rem 5% 1.5rem;
+
+    .header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 3rem;
+        width: 50%;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            background-color: var(--bg-primary);
+            padding: 0 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .content {
+        padding: 4rem 0;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        .person {
+            border: 1px solid #000000;
+            box-shadow: 0 2px 3px #000000;
+            padding: 2rem;
+            border-radius: 3rem;
+            box-sizing: border-box;
+
+            .title {
+                display: flex;
+                justify-content: flex-start;
+                align-items: end;
+                gap: 1.5rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #000000;
+                margin-bottom: 2rem;
+                position: relative;
+
+                #linkedin {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
