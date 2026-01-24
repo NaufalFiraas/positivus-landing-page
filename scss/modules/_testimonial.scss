@@ -1,0 +1,100 @@
+@use '../variables';
+
+
+.testimonial {
+    padding: 5rem 5% 1.5rem;
+
+    .header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            background-color: var(--bg-primary);
+            padding: 0 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .swiper {
+        padding: 4rem 0;
+        background-color: var(--bg-secondary);
+        border-radius: 3rem;
+        box-sizing: border-box;
+
+        .swiper-wrapper {
+
+            .swiper-slide {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0 5.5rem;
+                box-sizing: border-box;
+                margin: auto;
+
+                #testi {
+                    color: #fff;
+                    font-size: 1.1rem;
+                    padding: 3rem;
+                    border: 1px solid var(--bg-primary);
+                    border-radius: 3rem;
+                    width: 50%;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        border-left: 1px solid var(--bg-primary);
+                        border-bottom: 1px solid var(--bg-primary);
+                        width: 2rem;
+                        height: 2rem;
+                        transform: rotate(-45deg);
+                        bottom: -1.1rem;
+                        left: 4rem;
+                        background-color: var(--bg-secondary);
+                    }
+                }
+
+                .user-identity {
+                    width: 60%;
+                    padding-left: 7rem;
+
+                    h3 {
+                        font-size: 1.2rem;
+                        color: var(--bg-primary);
+                        font-weight: 500;
+                        text-align: start;
+                    }
+
+                    #role {
+                        font-size: 1.2rem;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination-bullet {
+            border-radius: 0;
+            background-color: var(--bg-primary);
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: var(--bg-primary);
+        }
+
+    }
+}
