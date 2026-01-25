@@ -1,0 +1,22 @@
+@use '../variables';
+
+@media (max-width: 750px) {
+    .case {
+        .content {
+            flex-direction: column;
+            padding: 0 4rem;
+
+            .case1,
+            .case2,
+            .case3 {
+                padding: 4rem 0;
+            }
+
+            .case1,
+            .case2 {
+                border-right: none;
+                border-bottom: 2px solid var(--bg-tertiary);
+            }
+        }
+    }
+}
