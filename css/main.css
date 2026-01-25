@@ -6,8 +6,18 @@
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Space Grotesk", sans-serif;
+}
+body .hero,
+body .services,
+body .case,
+body .contact {
+  scroll-margin-top: 4rem;
 }
 
 :root {
@@ -901,9 +911,9 @@ body {
 }
 .contact .toast {
   font-size: 1.2rem;
-  background-color: var(--bg-primary);
+  background-color: #61b000;
   font-weight: 500;
-  color: #000000;
+  color: #fff;
   padding: 1rem;
   border-radius: 1rem;
   position: fixed;
@@ -919,7 +929,7 @@ body {
   right: 0;
 }
 .contact .toast.failed {
-  background-color: rgb(252, 106, 106);
+  background-color: rgb(216, 0, 0);
   color: #fff;
 }
 

@@ -12,6 +12,9 @@ const formEmail = document.getElementById("email")
 const formMessage = document.getElementById("message")
 const messageError = document.querySelectorAll(".message-error")
 const toast = document.getElementById("toast")
+const subscribeBtn = document.getElementById("subscribe-btn")
+const emailSubscribe = document.getElementById("email-subscribe")
+const subscribeForm = document.getElementById("subscribe")
 const sendContactURL = "https://jsonplaceholder.typicode.com/posts"
 
 hamburgerMenu.addEventListener("click", (e) => {
@@ -69,7 +72,7 @@ for (let i = 0; i < btnExpand.length; i++) {
 contactBtn.addEventListener("click", (e) => {
     e.preventDefault()
 
-    if (!contactBtn.disable) {
+    if (!contactBtn.disabled) {
         const selectedRadio = document.querySelector(`input[name="hi-quote"]:checked`)
         const validation = contactFormValidation(formName.value, formEmail.value, formMessage.value, selectedRadio)
         if (validation) {
@@ -156,6 +159,83 @@ async function postContact(payload) {
         contactBtn.textContent = "Send Message"
         contactForm.reset()
         contactBtn.disabled = false
+    }
+}
+
+subscribeBtn.addEventListener("click", function (e) {
+    e.preventDefault()
+    if (!this.disabled) {
+        const validation = validateEmailSubscribe(emailSubscribe.value)
+        if (validation) {
+            const payload = {
+                email: emailSubscribe.value
+            }
+            sendSubscribe(payload)
+        } else {
+            setTimeout(() => {
+                toast.classList.remove("active")
+                toast.classList.remove("failed")
+            }, 2000)
+        }
+    }
+})
+
+function validateEmailSubscribe(email) {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+    if (email.trimStart() === '' || email === null) {
+        toast.classList.add("active")
+        toast.classList.add("failed")
+        toast.textContent = "Email is Required!"
+        return false
+    }
+
+    if (!emailPattern.test(email)) {
+        toast.classList.add("active")
+        toast.classList.add("failed")
+        toast.textContent = "Invalid Email!"
+        return false
+    }
+
+    return true
+}
+
+async function sendSubscribe(payload) {
+    subscribeBtn.disabled = true
+    subscribeBtn.textContent = "Sending..."
+    subscribeBtn.classList.add("disable")
+
+    try {
+        const response = await fetch(sendContactURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        })
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch from ${sendContactURL}`)
+        }
+
+        const data = await response.json()
+        console.log(data)
+
+        toast.classList.add("active")
+        toast.textContent = `Email already sent to ${payload.email}`
+
+    } catch (err) {
+        console.log(err)
+        toast.classList.add("active")
+        toast.classList.add("failed")
+        toast.textContent = "Failed to send email"
+    } finally {
+        setTimeout(() => {
+            toast.classList.remove("active")
+            toast.classList.remove("failed")
+        }, 2000)
+        subscribeBtn.textContent = "Subscribe to news"
+        subscribeBtn.disabled = false
+        subscribeBtn.classList.remove("disable")
+        subscribeForm.reset()
     }
 }
 
