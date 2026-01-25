@@ -5,6 +5,17 @@
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Space Grotesk", sans-serif;
+
+    .hero,
+    .services,
+    .case,
+    .contact {
+        scroll-margin-top: 4rem;
+    }
 }

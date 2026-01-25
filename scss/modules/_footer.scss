@@ -1,0 +1,122 @@
+@use '../variables';
+@use '../mixins';
+
+footer {
+    margin: 5rem 5% 0;
+    background-color: var(--bg-secondary);
+    // color: var(--bg-tertiary);
+    padding: 3rem;
+    box-sizing: border-box;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 0.5rem;
+
+                img {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                }
+
+                h3 {
+                    display: inline-block;
+                    font-size: 1.4rem;
+                    color: var(--bg-tertiary);
+                }
+            }
+        }
+
+        .menus {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            a {
+                text-decoration: none;
+                color: var(--bg-tertiary);
+                font-size: 1.1rem;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    border-bottom: 1px solid var(--bg-tertiary);
+                    width: 100%;
+                }
+            }
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    .content {
+        padding: 3rem 0;
+        box-sizing: border-box;
+        display: flex;
+        border-bottom: 1px solid var(--bg-tertiary);
+
+        .contact-us {
+            width: 45%;
+            color: var(--bg-tertiary);
+
+            h3 {
+                font-weight: 500;
+                font-size: 1.2rem;
+                background-color: var(--bg-primary);
+                padding: 0.1rem;
+                border-radius: 0.5rem;
+                width: fit-content;
+                color: var(--bg-secondary);
+                margin-bottom: 1rem;
+            }
+
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+
+        #subscribe {
+            width: 55%;
+            background-color: #292A32;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+
+            input {
+                font-size: 1rem;
+                padding: 1rem;
+                background: none;
+                border: 1px solid var(--bg-tertiary);
+                color: var(--bg-tertiary);
+                border-radius: 1rem;
+            }
+
+            button {
+                margin-left: 1rem;
+                @include mixins.generalButton(var(--bg-primary), #000000);
+            }
+        }
+    }
+
+    .credits {
+        color: var(--bg-tertiary);
+        padding-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+}
