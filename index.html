@@ -396,26 +396,33 @@
         <div class="content">
             <form action="">
                 <div class="radio-btn">
-                    <input type="radio" name="hi-quote" value="hi" id="hi" checked>
+                    <input type="radio" name="hi-quote" value="hi" id="hi">
                     <label for="hi-quote" id="radio-hi">Say Hi</label>
                     <input type="radio" name="hi-quote" value="quote" id="quote">
                     <label for="quote" id="radio-quote">Get a Quote</label>
+                    <p class="message-error">testing</p>
                 </div>
 
                 <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="name" placeholder="Name" autocomplete="off">
+                <p class="message-error">testing</p>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email">
+                <input type="email" id="email" placeholder="Email" autocomplete="off">
+                <p class="message-error">testing</p>
 
                 <label for="message">Message</label>
-                <textarea name="message" id="message" placeholder="Message" rows="7" required></textarea>
+                <textarea name="message" id="message" placeholder="Message" autocomplete="off" rows="7"
+                    required></textarea>
+                <p class="message-error">testing</p>
 
-                <button type="submit">Send Message</button>
+                <button type="submit" id="submit-contact">Send Message</button>
             </form>
 
             <img src="images/contact-us-image.svg" alt="contact" class="contact-image">
         </div>
+
+        <div class="toast" id="toast">Success Send Message!</div>
     </section>
     <!-- Contact Us End -->
 

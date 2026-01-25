@@ -84,6 +84,18 @@ body {
 .navbar .menus button:active {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5647058824);
 }
+.navbar .menus button.disable {
+  background-color: #a1a1a1;
+  color: #000000;
+}
+.navbar .menus button.disable:hover {
+  background-color: #a1a1a1;
+  color: #000000;
+  box-shadow: none;
+}
+.navbar .menus button.disable:active {
+  box-shadow: none;
+}
 .navbar #hamburgerMenu {
   display: none;
 }
@@ -163,6 +175,18 @@ body {
 }
 .hero .hero-content button:active {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5647058824);
+}
+.hero .hero-content button.disable {
+  background-color: #a1a1a1;
+  color: #000000;
+}
+.hero .hero-content button.disable:hover {
+  background-color: #a1a1a1;
+  color: #000000;
+  box-shadow: none;
+}
+.hero .hero-content button.disable:active {
+  box-shadow: none;
 }
 .hero .hero-image {
   flex: 1;
@@ -364,6 +388,18 @@ body {
 }
 .things .content button:active {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5647058824);
+}
+.things .content button.disable {
+  background-color: #a1a1a1;
+  color: #000000;
+}
+.things .content button.disable:hover {
+  background-color: #a1a1a1;
+  color: #000000;
+  box-shadow: none;
+}
+.things .content button.disable:active {
+  box-shadow: none;
 }
 .things img {
   flex: 1;
@@ -621,6 +657,18 @@ body {
 .team .team-footer button:active {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5647058824);
 }
+.team .team-footer button.disable {
+  background-color: #a1a1a1;
+  color: #000000;
+}
+.team .team-footer button.disable:hover {
+  background-color: #a1a1a1;
+  color: #000000;
+  box-shadow: none;
+}
+.team .team-footer button.disable:active {
+  box-shadow: none;
+}
 
 @media (max-width: 900px) {
   .team .header {
@@ -753,7 +801,7 @@ body {
   box-sizing: border-box;
 }
 .contact .content form .radio-btn {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .contact .content form .radio-btn #quote {
   margin-left: 2rem;
@@ -774,10 +822,25 @@ body {
   font-size: 1.1rem;
 }
 .contact .content form input#name, .contact .content form input#email {
-  padding: 1rem;
+  padding: 0.8rem;
   border-radius: 0.8rem;
   width: 100%;
   box-sizing: border-box;
+}
+.contact .content form input:focus {
+  border: 2px solid var(--bg-primary);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5647058824);
+  outline: none;
+}
+.contact .content form .message-error {
+  font-size: 0.9rem;
+  color: red;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.contact .content form .message-error.active {
+  opacity: 1;
 }
 .contact .content form label {
   display: block;
@@ -785,11 +848,16 @@ body {
   margin-top: 1.5rem;
 }
 .contact .content form #message {
-  padding: 1rem;
+  padding: 0.8rem;
   border-radius: 0.8rem;
   width: 100%;
   font-size: 1.1rem;
   box-sizing: border-box;
+}
+.contact .content form #message:focus {
+  border: 2px solid var(--bg-primary);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5647058824);
+  outline: none;
 }
 .contact .content form button {
   display: block;
@@ -812,12 +880,47 @@ body {
 .contact .content form button:active {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5647058824);
 }
+.contact .content form button.disable {
+  background-color: #a1a1a1;
+  color: #000000;
+}
+.contact .content form button.disable:hover {
+  background-color: #a1a1a1;
+  color: #000000;
+  box-shadow: none;
+}
+.contact .content form button.disable:active {
+  box-shadow: none;
+}
 .contact .content .contact-image {
   position: absolute;
   top: 11%;
   right: -18rem;
   max-width: 35rem;
   display: inline-block;
+}
+.contact .toast {
+  font-size: 1.2rem;
+  background-color: var(--bg-primary);
+  font-weight: 500;
+  color: #000000;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: fixed;
+  width: 15rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5647058824);
+  text-align: center;
+  top: 6.5rem;
+  right: -300px;
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+.contact .toast.active {
+  right: 0;
+}
+.contact .toast.failed {
+  background-color: rgb(252, 106, 106);
+  color: #fff;
 }
 
 @media (max-width: 650px) {

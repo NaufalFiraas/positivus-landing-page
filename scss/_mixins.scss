@@ -17,6 +17,21 @@
     &:active {
         box-shadow: 1px 1px 2px #00000090;
     }
+
+    &.disable {
+        background-color: #a1a1a1;
+        color: #000000;
+    }
+
+    &.disable:hover {
+        background-color: #a1a1a1;
+        color: #000000;
+        box-shadow: none;
+    }
+
+    &.disable:active {
+        box-shadow: none;
+    }
 }
 
 @mixin serviceCard($bgCard, $bgh2) {

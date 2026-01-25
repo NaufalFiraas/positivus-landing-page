@@ -57,7 +57,7 @@
                     align-self: baseline;
                 }
 
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
             }
 
             input {
@@ -65,11 +65,29 @@
 
                 &#name,
                 &#email {
-                    padding: 1rem;
+                    padding: 0.8rem;
                     border-radius: 0.8rem;
                     width: 100%;
                     box-sizing: border-box;
                 }
+
+                &:focus {
+                    border: 2px solid var(--bg-primary);
+                    box-shadow: 2px 2px 3px #00000090;
+                    outline: none;
+                }
+            }
+
+            .message-error {
+                font-size: 0.9rem;
+                color: red;
+                font-weight: 500;
+                opacity: 0;
+                transition: all 0.2s ease;
+            }
+
+            .message-error.active {
+                opacity: 1;
             }
 
             label {
@@ -79,18 +97,24 @@
             }
 
             #message {
-                padding: 1rem;
+                padding: 0.8rem;
                 border-radius: 0.8rem;
                 width: 100%;
                 font-size: 1.1rem;
                 box-sizing: border-box;
+
+                &:focus {
+                    border: 2px solid var(--bg-primary);
+                    box-shadow: 2px 2px 3px #00000090;
+                    outline: none;
+                }
             }
 
             button {
                 display: block;
                 width: 100%;
                 margin-top: 2rem;
-                @include mixins.generalButton(var(--bg-secondary), #fff)
+                @include mixins.generalButton(var(--bg-secondary), #fff);
             }
         }
 
@@ -100,6 +124,32 @@
             right: -18rem;
             max-width: 35rem;
             display: inline-block;
+        }
+    }
+
+    .toast {
+        font-size: 1.2rem;
+        background-color: var(--bg-primary);
+        font-weight: 500;
+        color: #000000;
+        padding: 1rem;
+        border-radius: 1rem;
+        position: fixed;
+        width: 15rem;
+        box-shadow: 2px 2px 3px #00000090;
+        text-align: center;
+        top: 6.5rem;
+        right: -300px;
+        z-index: 99;
+        transition: all 0.3s ease;
+
+        &.active {
+            right: 0;
+        }
+
+        &.failed {
+            background-color: rgb(252, 106, 106);
+            color: #fff;
         }
     }
 }

@@ -5,6 +5,14 @@ const navbar = document.querySelector(".navbar")
 const menu = document.querySelectorAll(".menus a")
 const btnExpand = document.querySelectorAll(".process .title p")
 const process = document.querySelectorAll(".process")
+const contactBtn = document.getElementById("submit-contact")
+const contactForm = document.querySelector(".contact .content form")
+const formName = document.getElementById("name")
+const formEmail = document.getElementById("email")
+const formMessage = document.getElementById("message")
+const messageError = document.querySelectorAll(".message-error")
+const toast = document.getElementById("toast")
+const sendContactURL = "https://jsonplaceholder.typicode.com/posts"
 
 hamburgerMenu.addEventListener("click", (e) => {
     menus.classList.toggle("active")
@@ -58,6 +66,99 @@ for (let i = 0; i < btnExpand.length; i++) {
     })
 }
 
+contactBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    if (!contactBtn.disable) {
+        const selectedRadio = document.querySelector(`input[name="hi-quote"]:checked`)
+        const validation = contactFormValidation(formName.value, formEmail.value, formMessage.value, selectedRadio)
+        if (validation) {
+            const payload = {
+                name: formName.value,
+                email: formEmail.value,
+                message: formMessage.value,
+                radio: selectedRadio.value
+            }
+
+            postContact(payload)
+        }
+    }
+})
+
+function contactFormValidation(name, email, message, radio) {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+    for (let i = 0; i < messageError.length; i++) {
+        messageError[i].classList.remove("active")
+    }
+
+    if (radio === '' || radio === null) {
+        messageError[0].textContent = 'Required!'
+        messageError[0].classList.add("active")
+        return false
+    }
+    if (name.trimStart() === '' || name === null) {
+        messageError[1].textContent = "Required!"
+        messageError[1].classList.add("active")
+        return false
+    }
+    if (email.trimStart() === '' || email === null) {
+        messageError[2].textContent = "Required!"
+        messageError[2].classList.add("active")
+        return false
+    }
+    if (!emailPattern.test(email)) {
+        messageError[2].textContent = 'Email Invalid!'
+        messageError[2].classList.add("active")
+        return false
+    }
+    if (message.trimStart() === '' || message === null) {
+        messageError[3].textContent = "Required!"
+        messageError[3].classList.add("active")
+        return false
+    }
+
+    return true
+}
+
+async function postContact(payload) {
+    contactBtn.disabled = true
+    contactBtn.textContent = "Sending..."
+    contactBtn.classList.add("disable")
+
+    try {
+        const response = await fetch(sendContactURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        })
+
+        if (!response.ok) {
+            throw new Error(`Failed to post data on ${sendContactURL}`)
+        }
+
+        const data = await response.json()
+        console.log(data)
+        toast.textContent = "Success Send Message!"
+        toast.classList.add("active")
+    } catch (err) {
+        contactBtn.textContent = "Failed"
+        console.log(err)
+        toast.textContent = "Failed to Send Message!"
+        toast.classList.add("active")
+        toast.classList.add("failed")
+    } finally {
+        setTimeout(() => {
+            toast.classList.remove("active")
+            toast.classList.remove("failed")
+        }, 2000)
+        contactBtn.classList.remove("disable")
+        contactBtn.textContent = "Send Message"
+        contactForm.reset()
+        contactBtn.disabled = false
+    }
+}
+
 // Swiper JS
 new Swiper('.swiper', {
     // Optional parameters
@@ -74,4 +175,4 @@ new Swiper('.swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     }
-});
+})
