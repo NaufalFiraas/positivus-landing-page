@@ -1,8 +1,8 @@
 // responsive navbar
 const hamburgerMenu = document.getElementById("hamburgerMenu")
-const menus = document.querySelector(".menus")
+const menus = document.querySelector(".navbar .menus")
 const navbar = document.querySelector(".navbar")
-const menu = document.querySelectorAll(".menus a")
+const menu = document.querySelectorAll(".navbar .menus a")
 const btnExpand = document.querySelectorAll(".process .title p")
 const process = document.querySelectorAll(".process")
 const contactBtn = document.getElementById("submit-contact")
