@@ -15,6 +15,8 @@ const toast = document.getElementById("toast")
 const subscribeBtn = document.getElementById("subscribe-btn")
 const emailSubscribe = document.getElementById("email-subscribe")
 const subscribeForm = document.getElementById("subscribe")
+const sections = document.querySelectorAll("section[id]")
+const navLinks = document.querySelectorAll(".navbar .menus .nav-link")
 const sendContactURL = "https://jsonplaceholder.typicode.com/posts"
 
 hamburgerMenu.addEventListener("click", (e) => {
@@ -237,6 +239,32 @@ async function sendSubscribe(payload) {
         subscribeBtn.classList.remove("disable")
         subscribeForm.reset()
     }
+}
+
+window.addEventListener("scroll", onScrollSpy)
+window.addEventListener("load", onScrollSpy)
+
+function onScrollSpy() {
+    const scrollPos = window.scrollY || window.pageYOffset;
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120; // offset navbar
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id");
+
+        if (
+            scrollPos >= sectionTop &&
+            scrollPos < sectionTop + sectionHeight
+        ) {
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+
+                if (link.getAttribute("href") === `#${sectionId}`) {
+                    link.classList.add("active");
+                }
+            });
+        }
+    });
 }
 
 // Swiper JS
